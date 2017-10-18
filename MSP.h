@@ -659,6 +659,8 @@ class MSP {
 
     bool command(uint8_t messageID, void * payload, uint8_t size, bool waitACK = true);
 
+    void reset();
+
     // high level functions
     
     bool getActiveModes(uint32_t * activeModes);

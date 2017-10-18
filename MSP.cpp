@@ -30,6 +30,13 @@ void MSP::begin(Stream & stream, uint32_t timeout)
 }
 
 
+void MSP::reset()
+{
+  _stream->flush();
+  while (_stream->available() > 0)
+    _stream->read();
+}
+
 void MSP::send(uint8_t messageID, void * payload, uint8_t size)
 {
   _stream->write('$');
